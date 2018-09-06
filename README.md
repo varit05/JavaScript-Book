@@ -5,6 +5,7 @@ One place JavaScript!
 ### Table of Contents
 
 - [Callback/ Higher-order Function](#callback)
+- [Promises](#promises)
 
 <a name=“callback”/>
 
@@ -26,3 +27,17 @@ the callback were defined in the containing function. Hence callback function ha
 well as global variables. 
 
 [JsFiddle Example](http://jsfiddle.net/varit05/o3vu14kd/)
+
+<a name=“promises”/>
+
+#### Promises
+
+The promise constructor takes one argument, a callback with two parameters, resolve and reject. 
+Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject.
+
+A Promise can be:
+1. fulfilled - The action relating to the promise succeeded
+2. rejected - The action relating to the promise failed
+3. pending - Hasn't fulfilled or rejected yet
+4. settled - Has fulfilled or rejected
+
