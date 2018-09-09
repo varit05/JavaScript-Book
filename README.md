@@ -6,6 +6,7 @@ One place JavaScript!
 
 - [Callback/ Higher-order Function](#callback)
 - [Promises](#promises)
+- [Closures](#closures)
 
 <a name=“callback”/>
 
@@ -41,3 +42,22 @@ A Promise can be:
 3. pending - Hasn't fulfilled or rejected yet
 4. settled - Has fulfilled or rejected
 
+<a name=“closures”/>
+
+#### Closures
+
+Closures are related to function scope. Every function in JS is closure.
+Whenever you create a function within another function, you have created a closure. The inner function is the closure.
+This closure is usually returned so you can use the outer function's variables at a later time.
+
+```javascript
+function outerFunction () {
+     const outer = "I see the outer variable!"
+
+  return function innerFunction() {
+    console.log(outer)
+  }
+}
+
+outerFunction()() // I see the outer variable!
+```
