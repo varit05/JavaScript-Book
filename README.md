@@ -63,7 +63,7 @@ function outerFunction () {
 outerFunction()() // I see the outer variable!
 ```
 
-<a name=“closures”/>
+<a name=“SDiff”/>
 
 #### Splice vs Slice vs Split
 
