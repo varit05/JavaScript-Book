@@ -7,7 +7,7 @@ One place JavaScript!
 - [Callback/ Higher-order Function](#callback)
 - [Promises](#promises)
 - [Closures](#closures)
-- [Splice vs Slice vs Split](#SDiff)
+- [Splice vs Slice vs Split](#sdiff)
 
 <a name=“callback”/>
 
@@ -63,7 +63,7 @@ function outerFunction () {
 outerFunction()() // I see the outer variable!
 ```
 
-<a name=“SDiff”/>
+<a name=“sdiff”/>
 
 #### Splice vs Slice vs Split
 
