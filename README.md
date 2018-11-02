@@ -138,7 +138,8 @@ typeof(a); // a is type of "boolean"
 
 With Latest ECMA, JS has 7 data types
 
-Six primitive data types:     
+Six primitive data types:
+
      1. Boolean
      2. String
      3. Number
