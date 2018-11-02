@@ -7,7 +7,8 @@ One place JavaScript!
 - [Callback/ Higher-order Function](#callback)
 - [Promises](#promises)
 - [Closures](#closures)
-- [Splice vs Slice vs Split](#sdiff)
+- [Splice vs Slice vs Split](#diffs)
+- [Data Types](#datatypes)
 
 <a name=“callback”/>
 
@@ -115,4 +116,35 @@ let res = str.split(" ");
 
 res
 (5) ["How", "are", "you", "doing", "today?"]
+```
+
+<a name=“datatypes”/>
+
+#### Data Types
+
+## Dynamic typing
+
+JavaScript is Dynamic/ loosly typed language. Variables are not associate with any *types* in js.
+
+```javascript
+var a = "github";
+typeof(a); // a is type of string 
+a = 5;
+typeof(a); // a is type of number
+a = true;
+typeof(a); // a is type of "boolean" 
+    
+```
+
+With Latest ECMA, JS has 7 data types
+
+Six primitive data types:     
+     1. Boolean
+     2. String
+     3. Number
+     4. Null 
+     5. Undefined
+     6. Symbol (Introduced in ES6)
+     
+     7. Object // This is not primitive data type.
 
