@@ -9,6 +9,7 @@ One place JavaScript!
 - [Closures](#closures)
 - [Splice vs Slice vs Split](#diffs)
 - [Data Types](#datatypes)
+- [DOM](#dom)
 
 <a name=“callback”/>
 
@@ -149,3 +150,23 @@ Six primitive data types:
      
      7. Object // This is not primitive data type.
 
+<a name=“dom”/>
+
+#### DOM - Document Object Model
+
+DOM(Document Object Model) is a crucial part for making any Web apps and Mobile apps interactive. 
+The DOM model represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects.
+Accessing DOM element, we can change the document structure, style and content.
+
+
+```HTML
+<h2 class="hello"> Hello Github! </h2>
+```
+
+```javascript
+let h2 = document.getElementsByTagName('h2')[0]; // Since getElementsByTagName returns an array, to access it need to add [0]
+console.log(h2.innerText); // Hello Github!
+console.log(h2.className); // Hello
+```
+Such this, there are many other interface listed below in MDN.
+[List of DOM Interface](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model#DOM_interfaces)
