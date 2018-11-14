@@ -10,6 +10,7 @@ One place JavaScript!
 - [Splice vs Slice vs Split](#diffs)
 - [Data Types](#datatypes)
 - [DOM](#dom)
+- [Equality comparisons](#eqality)
 
 <a name=“callback”/>
 
@@ -170,3 +171,41 @@ console.log(h2.className); // Hello
 ```
 Such this, there are many other interface listed below in MDN.
 [List of DOM Interface](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model#DOM_interfaces)
+
+<a name=“equality”/>
+
+#### Equality Comparison
+
+JavaScript provides three different value-comparison operations:
+1. Strictly equality (===)
+
+triple equals (===) will do the same comparison (including the special handling for NaN, -0, and +0) but without type conversion, by simply always returning false if the types different.
+
+```HTML
+Values are not implicitly converted to the some other value. If the values have different types, values are considered differnt. 
+```
+2. Abstract Equality (==)
+
+double equals (==) will perform a type conversion when comparing two things, and will handle NaN, -0, and +0 specially to conform to IEEE 754 (so NaN != NaN, and -0 == +0);
+
+3. Object.is
+
+Object.is does not do type conversion and no special handling for NaN, -0, and +0 (it has the same behavior as === except on those special numeric values).
+
+``` javascript
+var a = 0;
+var b = new String('0');
+var c = '0';
+
+console.log(a === a); // true
+console.log(b === b); // true
+console.log(c === c); // true
+
+console.log(a === b); // false
+console.log(a === c); // false
+console.log(b === c); // false
+
+console.log(null === undefined); // false
+console.log(obj === null); // false
+console.log(obj === undefined); // false
+```
