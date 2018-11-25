@@ -4,6 +4,7 @@ One place JavaScript!
 
 ### Table of Contents
 
+- [Design Pattern](#pattern)
 - [Callback/ Higher-order Function](#callback)
 - [Promises](#promises)
 - [Closures](#closures)
@@ -11,6 +12,57 @@ One place JavaScript!
 - [Data Types](#datatypes)
 - [DOM](#dom)
 - [Equality comparisons](#eqality)
+
+<a name=“pattern”/>
+
+#### Design Pattern
+
+- [Singleton Pattern](#singleton)
+
+
+<a name=“singleton”/>
+
+##### Singleton Pattern: 
+The singleton design pattern restricts the instantiation of a function/class to one variable/object.
+
+Uses: 
+1. When exactly one variable/object is needed to coordinate actions across the system.
+2. Reduce the need of global variables.
+3. The getInstance method demonstates another design pattern called Lazy Load.
+
+``` javascript
+var Singleton = (function () {
+    var instance;
+ 
+    function createInstance() {
+        var object = new Object("I am the instance");
+        return object;
+    }
+ 
+    return {
+        getInstance: function () {
+            if (!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        }
+    };
+})();
+ 
+function run() {
+ 
+    var instance1 = Singleton.getInstance();
+    var instance2 = Singleton.getInstance();
+ 
+    alert("Same instance? " + (instance1 === instance2));  //Output: Same instance? true
+}
+```
+
+Ref:
+
+https://blog.mgechev.com/2014/04/16/singleton-in-javascript/
+
+https://www.dofactory.com/javascript/singleton-design-pattern
 
 <a name=“callback”/>
 
