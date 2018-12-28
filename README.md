@@ -8,6 +8,7 @@ One place JavaScript!
 - [Callback/ Higher-order Function](#callback)
 - [Promises](#promises)
 - [Closures](#closures)
+- [Pure functions](#pure)
 - [Splice vs Slice vs Split](#diffs)
 - [Data Types](#datatypes)
 - [DOM](#dom)
@@ -117,6 +118,17 @@ function outerFunction () {
 
 outerFunction()() // I see the outer variable!
 ```
+
+
+<a name=“pure”/>
+
+#### Pure functions
+
+A Pure functions doesn't depend on and doesn't modify the states of the variable out of its scope. 
+Technically, that means a pure function always returns same results given same parameters.
+Its execution doesn't depends on the state of the system.
+Pure functions are the piller of the Functional Programming 
+
 
 <a name=“sdiff”/>
 
