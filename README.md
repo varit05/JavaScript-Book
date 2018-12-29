@@ -7,6 +7,7 @@ One place JavaScript!
 - [Design Pattern](#pattern)
 - [Callback/ Higher-order Function](#callback)
 - [Promises](#promises)
+- [Async/Await](#async)
 - [Closures](#closures)
 - [Pure functions](#pure)
 - [Splice vs Slice vs Split](#diffs)
@@ -69,6 +70,8 @@ https://www.dofactory.com/javascript/singleton-design-pattern
 
 #### Callback/ Higher-order Function
 
+This is the old-fashioned classical approach to asynchronous programming. You provide a function as an argument to another function that executes an asynchronous task. When the asynchronous task completes, the executing function calls your callback function.
+
 A callback function is a function passed into another function as an argument, 
 which is then invoked inside the outer function to complete some kind of action.
 It is also known as Higher-order Function.
@@ -82,7 +85,9 @@ pair of executing parenthesis () like we do when we are executing a function.
 
 Callback functions Are **Closures.** Callback function is executed inside the containing function’s body just as if
 the callback were defined in the containing function. Hence callback function has access to the function variables as
-well as global variables. 
+well as global variables.
+
+The disadvantage of using callback occurs when you have multiple chained async tasks, which requires you to define callback inside callback, inside callback and that result in **callback hell**  
 
 [JsFiddle Example](http://jsfiddle.net/varit05/o3vu14kd/)
 
@@ -90,14 +95,51 @@ well as global variables.
 
 #### Promises
 
+Promises have been introduced in ES6 (2015) to allow for more readable asynchronous code than is possible with callbacks.
+
 The promise constructor takes one argument, a callback with two parameters, resolve and reject. 
 Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject.
+
+The main difference between callbacks and promises is that with callbacks you tell the executing function 
+what to do when the asynchronous task completes, whereas with promises the executing function returns a special 
+object to you (the promise) and then you tell the promise what to do when the asynchronous task completes.
 
 A Promise can be:
 1. fulfilled - The action relating to the promise succeeded
 2. rejected - The action relating to the promise failed
 3. pending - Hasn't fulfilled or rejected yet
 4. settled - Has fulfilled or rejected
+
+```javascript 
+let promise = new Promise(function(resolve, reject) {
+  resolve(1);
+});
+
+promise.then(data=> console.log(data));
+```
+
+
+<a name=“async”/>
+
+#### Async/ Await
+
+Async/await has been introduced in ES8 (2017). This technique should really be listed under promises, because it is just syntactic sugar for working with promises. However, it is a syntactic sugar that is really worth looking at.
+
+```javascript
+async function f() {
+  try {
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    let user = await response.json();
+    console.log(user);
+  } catch(err) {
+    // catches errors both in fetch and response.json
+    alert(err);
+  }
+}
+
+f();
+
+```
 
 <a name=“closures”/>
 
